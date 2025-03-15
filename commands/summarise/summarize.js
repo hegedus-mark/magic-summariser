@@ -34,7 +34,7 @@ export const command = {
     const fetchAfter = Date.now() - duration;
 
     try {
-      const messages = await interaction.channel.messages.fetch({ limit: 100 });
+      const messages = await interaction.channel.messages.fetch();
       const relevantMessages = messages.filter(m => m.createdTimestamp >= fetchAfter);
 
       if (relevantMessages.size === 0) {
